@@ -1,0 +1,59 @@
+.outer {
+   background: linear-gradient(to top, #0099ff 0%, #cc66ff 100%);
+   display: table;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+}
+
+.middle {
+   display: table-cell;
+   vertical-align: middle;
+}
+
+.inner {
+   background: white;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 2em;
+   height: 60%;
+   width: 45%;
+   border: solid black 1.3em;  
+}
+
+.menu {
+   text-align: center;
+   vertical-align: middle;
+   height: 50%;
+}
+
+.message {
+   margin-top: 0.3em;
+   text-align: center;
+   vertical-align: middle;
+   border: solid black 4px;
+   min-height: 10em;
+}
+
+label {
+   margin-top: 0.1em;
+   margin-bottom: 0.1em;
+   font-size: 1.3em;
+}
+
+input {
+   margin: 0;
+}
+
+p {
+   background-color: white;
+   color: black;
+   text-align: center;
+   text-decoration: none;
+   font-size: 0.8em;
+   font-weight: bold;
+   margin-bottom: 0.3em;
+   vertical-align: middle;  
+}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+   <div class="outer">
+      <div class="middle">
+         <div class="inner">
+            <div style="display: block;">
+               <div id="encodeMenu" class="menu">
+                  <label for="encodeInput">Enter String to Encode:</label><br>
+                  <input type="text" id="encodeString" name="encodeString">
+                  <button id="encodeButton">Encode</button>   
+                  <div id="encoding" class="message">
+                  </div>                       
+               </div>
+               <div id="decodeMenu" class="menu">           
+                  <label for="decodeInput">Enter 32-Bit Words to Decode:</label><br>
+                  <input type="text" id="decodeWords" name="decodeWords">
+                  <button id="decodeButton">Decode</button>
+                  <div id="decoding" class="message">
+                  </div>                 
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+<script>
+   $('#encodeButton').click( function(){
+      var text = $('#encodeString').val();
+   
+      $.ajax({
+        url: "/encode",
+        type: "GET",
+        data: {input: text},
+        success: function(data) {
+         console.log(data['encoding']);
+         $('#encoding').text(data['encoding']);
+        },
+        error: function(x) {
+         $('#encoding').val('There was an error encoding this string...');
+        }
+      });
+   });
+   
+   $('#decodeButton').click( function(){
+      var text = $('#decodeWords').val();
+   
+      $.ajax({
+        url: "/decode",
+        type: "GET",
+        data: {input: text},
+        success: function(data) {
+         console.log(data['decoding']);
+         $('#decoding').text(data['decoding']);
+        },
+        error: function(x) {
+         $('#decoding').val('There was an error decoding this string...');
+        }
+      });
+   });    
+</script>
+{% endblock %}

@@ -6,7 +6,7 @@
 ### Activate the virtual environment
 `source venv/bin/activate`
 ### Then, install the package
-`pip install string2words`
+`pip install string2words/`
 ### Install Flask and the other requirements
 `pip install -r requirements`
 ### To use, activate a python shell with the virtual environment activated
